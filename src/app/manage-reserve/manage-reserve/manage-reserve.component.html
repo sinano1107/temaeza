@@ -1,0 +1,7 @@
+<p>manage-reserve works!</p>
+<hr>
+
+<ng-container *ngFor="let reserve of reserves">
+  <label>{{reserve | json}}</label>:<button (click)="delete(reserve.id)">削除</button><br>
+</ng-container>
+<button (click)="add()">追加</button>
