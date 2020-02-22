@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ManageNowRoutingModule } from './manage-now-routing.module';
 import { ManageNowComponent } from './manage-now/manage-now.component';
@@ -15,7 +16,8 @@ import { NowEffects } from './store/now.effects';
     CommonModule,
     ManageNowRoutingModule,
     StoreModule.forFeature(fromNow.nowsFeatureKey, fromNow.reducer),
-    EffectsModule.forFeature([NowEffects])
+    EffectsModule.forFeature([NowEffects]),
+    FormsModule
   ]
 })
 export class ManageNowModule { }

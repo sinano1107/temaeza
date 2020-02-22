@@ -13,6 +13,8 @@ import * as fromReserve from '../store/reserve.reducer';
 export class ManageReserveComponent implements OnInit {
 
   reserves: Reserve[];
+  input_date = 20200101;
+  input_compulsion = false
 
   constructor(private reserve: Store<fromReserve.State>,
               private manageReserveService: ManageReserveService) { }
@@ -27,7 +29,7 @@ export class ManageReserveComponent implements OnInit {
 
   add(): void {
     this.manageReserveService.add(
-      new Reserve(20200708, true)
+      new Reserve(this.input_date, this.input_compulsion)
     );
   }
 

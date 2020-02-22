@@ -1,7 +1,13 @@
-<p>manage-now works!</p>
+<p>manage-now</p>
 <hr>
 
 <ng-container *ngFor="let now of nows">
-  <label>{{now | json}}</label>:<button (click)="update(now.id)">アップデート</button>|<button (click)="delete(now.id)">削除</button><br>
+  <label>{{now | json}}</label>: <input type="number" [(ngModel)]="now.deserialize().campusId"><button (click)="update(now.id, now.deserialize())">アップデート</button>|<button (click)="delete(now.id)">削除</button><br>
 </ng-container>
+<hr>
+
+<label for="input_uid">userId</label>
+<input type="text" id="input_uid" [(ngModel)]="input_uid">
+<label for="input_campusId">campusId(グループ番号-1)</label>
+<input type="number" id="input_campusId" [(ngModel)]="input_campusId">
 <button (click)="add()">追加</button>

@@ -1,7 +1,13 @@
-<p>manage-reserve works!</p>
+<p>manage-reserve</p>
 <hr>
 
 <ng-container *ngFor="let reserve of reserves">
   <label>{{reserve | json}}</label>:<button (click)="delete(reserve.id)">削除</button><br>
 </ng-container>
+<hr>
+
+<label for="input_date">日時</label>
+<input type="number" id="input_date" [(ngModel)]="input_date">
+<label for="input_compulsion">強制的な席指定</label>
+<input type="checkbox" id="input_compulsion" [(ngModel)]="input_compulsion">
 <button (click)="add()">追加</button>

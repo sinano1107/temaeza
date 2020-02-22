@@ -13,6 +13,8 @@ import * as fromNow from '../store/now.reducer';
 export class ManageNowComponent implements OnInit {
 
   nows: Now[];
+  input_uid = '';
+  input_campusId = 0;
 
   constructor(private now: Store<fromNow.State>,
               private manageNowService: ManageNowService) { }
@@ -27,15 +29,12 @@ export class ManageNowComponent implements OnInit {
 
   add() {
     this.manageNowService.add(
-      new Now('114514', 0)
+      new Now(this.input_uid, this.input_campusId)
     );
   }
 
-  update(id: string/*, now: Now*/) {
-    this.manageNowService.update(
-      id,
-      new Now('114514', 1)
-    );
+  update(id: string, now: Now) {
+    this.manageNowService.update(id, now);
   }
 
   delete(id: string) {
