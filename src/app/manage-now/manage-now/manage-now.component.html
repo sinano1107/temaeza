@@ -1,0 +1,7 @@
+<p>manage-now works!</p>
+<hr>
+
+<ng-container *ngFor="let now of nows">
+  <label>{{now | json}}</label>:<button (click)="update(now.id)">アップデート</button>|<button (click)="delete(now.id)">削除</button><br>
+</ng-container>
+<button (click)="add()">追加</button>
