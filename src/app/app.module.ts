@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
 
@@ -13,6 +14,7 @@ import { CoreModule } from './core/core.module';
 const appRoutes: Routes = [
   { path: '', loadChildren: './manage-reserve/manage-reserve.module#ManageReserveModule' },
   { path: 'manage-now', loadChildren: './manage-now/manage-now.module#ManageNowModule' },
+  { path: 'manage-user', loadChildren: './manage-user/manage-user.module#ManageUserModule' },
 ]
 
 @NgModule({
@@ -24,6 +26,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     CoreModule,
   ],
   providers: [],
