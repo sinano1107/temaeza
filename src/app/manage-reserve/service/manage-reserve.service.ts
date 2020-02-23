@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { map } from 'rxjs/operators'
 import { AngularFirestore } from '@angular/fire/firestore';
 
 import { Reserve } from '../../class/reserve';
