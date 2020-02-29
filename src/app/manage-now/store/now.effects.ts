@@ -40,7 +40,7 @@ export class NowEffects {
             map(nows => nows.map(now => {
               const data = now.payload.doc.data();
               const id = now.payload.doc.id;
-              return new Now(data.uid, data.campusId, id);
+              return new Now(data.uid, data.campusId, data.time, id);
             })),
             map((result: Now[]) => {
               return new LoadNowsSuccess({

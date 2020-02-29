@@ -26,16 +26,27 @@ export class ManageNowComponent implements OnInit {
         this.nows = nows;
         nows.forEach(now => {
           this.editList.push(
-            new Now(now.uid, now.campusId)
+            new Now(now.uid, now.campusId, now.time)
           );
         })
       }
     )
   }
 
+  // 1 => 01, 2 => 02
+  getdoubleDigestNumber(number: number): string {
+    return ("0" + number).slice(-2)
+  }
+
   add() {
+    const now = new Date()
+
     this.manageNowService.add(
-      new Now(this.input_uid, this.input_campusId)
+      new Now(
+        this.input_uid,
+        this.input_campusId,
+        Number(`${now.getHours()}${this.getdoubleDigestNumber(now.getMinutes())}`)
+      )
     );
   }
 
