@@ -15,6 +15,7 @@ export class ManageNowComponent implements OnInit {
   nows: Now[];
   input_uid = '';
   input_campusId = 0;
+  editList = []
 
   constructor(private now: Store<fromNow.State>,
               private manageNowService: ManageNowService) { }
@@ -22,7 +23,12 @@ export class ManageNowComponent implements OnInit {
   ngOnInit() {
     this.now.select(fromNow.selectAllNows).subscribe(
       nows => {
-        this.nows = nows
+        this.nows = nows;
+        nows.forEach(now => {
+          this.editList.push(
+            new Now(now.uid, now.campusId)
+          );
+        })
       }
     )
   }
