@@ -23,6 +23,7 @@ export class ManageNowComponent implements OnInit {
   ngOnInit() {
     this.now.select(fromNow.selectAllNows).subscribe(
       nows => {
+        this.editList = [];
         this.nows = nows;
         nows.forEach(now => {
           this.editList.push(
