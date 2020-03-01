@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "unteak-28a0a"
+  },
+  "targets": {
+    "unteak-28a0a": {
+      "hosting": {
+        "temaeza": [
+          "unteak-temaeza"
+        ]
+      }
+    }
+  }
+}
