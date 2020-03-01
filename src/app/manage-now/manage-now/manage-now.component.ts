@@ -45,7 +45,7 @@ export class ManageNowComponent implements OnInit {
       new Now(
         this.input_uid,
         this.input_campusId,
-        Number(`${now.getHours()}${this.getdoubleDigestNumber(now.getMinutes())}`)
+        Number(`${now.getHours()}${this.getdoubleDigestNumber(now.getMinutes())}${this.getdoubleDigestNumber(now.getSeconds())}`)
       )
     );
   }
